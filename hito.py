@@ -46,7 +46,6 @@ def view_mode():
 
 
 def weave_mode():
-    """Fills the last 52 weeks of history."""
     dates = get_grid_dates()
     today = datetime.now()
     for r in range(NUMROWS):
@@ -59,7 +58,6 @@ def weave_mode():
 
 
 def stitch_mode():
-    """Checks only today's pixel for the automated cron job."""
     today = datetime.now()
     if get_hitomezashi_pixel(today):
         do_commits(today)
